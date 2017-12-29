@@ -77,3 +77,25 @@ void ScatterDataModifier::changeSpeed(const double &__speed)
 {
     this->m_speed = __speed * pow(10, 6);
 }
+
+void ScatterDataModifier::addInfo() const
+{
+    QWidget *inf = new QWidget;
+    inf->setWindowModified(false);
+    inf->setWindowIcon(QIcon("C:/Users/vlada/Documents/Electron/icon.png"));
+    inf->setWindowTitle(QStringLiteral("Справка"));
+    QLabel *label = new QLabel;
+    QHBoxLayout *layout = new QHBoxLayout();
+    layout->setSizeConstraint(QLayout::SetFixedSize);
+    label->setText("Данная программа моделирует траекторию электрона, \n"
+                   "движущегося в однородном магнитном поле. \n\n"
+                   "Для того, чтобы изменить положение камеры, вы можете\n"
+                   "использовать правую кнопку мыши, для уменьшения/уве-\n"
+                   "личения изображения - колесико мыши (или специальные\n"
+                   "жесты тачпада). Также, для смены положения камеры, вы\n"
+                   "можете воспользоваться кнопкой, расположенной справа.\n\n"
+                   "Автор: студент М3206 Шакирова Владислава.");
+    layout->addWidget(label);
+    inf->setLayout(layout);
+    inf->show();
+}

@@ -25,7 +25,7 @@ int main(int argc, char **argv)
     hLayout->addWidget(container, 1);
     hLayout->addLayout(vLayout);
     widget->setWindowTitle(QStringLiteral("Траектория электрона в однородном магнитном поле"));
-    //widget->setWindowIcon(QIcon(":/img/icon.png"));
+    widget->setWindowIcon(QIcon("C:/Users/vlada/Documents/Electron/icon.png"));
 
     const double c_angle = 60,
                  c_induction = 25.3,
@@ -72,6 +72,8 @@ int main(int argc, char **argv)
     modifier->changeSpeed(c_speed);
     modifier->addData();
 
+    QObject::connect(info, &QPushButton::clicked,
+                     modifier, &ScatterDataModifier::addInfo);
     QObject::connect(cameraButton, &QPushButton::clicked,
                      modifier, &ScatterDataModifier::changePresetCamera);
     QObject::connect(angle, QOverload<int>::of(&QSpinBox::valueChanged),

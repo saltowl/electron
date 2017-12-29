@@ -23,6 +23,7 @@ public:
     void changeAngle(const int &__agle);
     void changeInduction(const double &__induction);
     void changeSpeed(const double &__speed);
+    void addInfo() const;
 
 private:
     Q3DScatter *m_graph;
