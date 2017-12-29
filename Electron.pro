@@ -31,3 +31,5 @@ HEADERS += \
 
 DISTFILES += \
     icon.png
+
+RC_FILE = appIcon.rc
