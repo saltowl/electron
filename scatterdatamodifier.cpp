@@ -36,7 +36,7 @@ void ScatterDataModifier::addData()
     m_graph->axisZ()->setTitleVisible(true);
 
     QScatterDataArray *dataArray = new QScatterDataArray;
-    dataArray->resize(100000);
+    dataArray->resize(1000);
     QScatterDataItem *ptrToDataArray = &dataArray->first();
 
     double m_radius = (el_mass * m_speed * qSin(m_angle)) / (el_charge * m_induction);

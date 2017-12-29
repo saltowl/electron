@@ -41,21 +41,25 @@ int main(int argc, char **argv)
 
     QDoubleSpinBox *induction = new QDoubleSpinBox(widget);
     induction->setValue(c_induction);
-    induction->setSuffix(" * 10⁻⁴ Тл");
+    induction->setSuffix(" * 10⁻⁴  Тл");
 
     QDoubleSpinBox *speed = new QDoubleSpinBox(widget);
     speed->setValue(c_speed);
-    speed->setSuffix(" * 10⁶ м/с");
+    speed->setSuffix(" * 10⁶  м/с");
 
     QPushButton *go = new QPushButton(widget);
     go->setText(QStringLiteral("Построить!"));
 
+    QPushButton *info = new QPushButton(widget);
+    info->setText(QStringLiteral("Справка"));
+
+    vLayout->addWidget(info, 0, Qt::AlignTop);
     vLayout->addWidget(cameraButton, 0, Qt::AlignTop);
     vLayout->addWidget(new QLabel(QStringLiteral("")));
     vLayout->addWidget(new QLabel(QStringLiteral("Угол между направлениями скорости")));
     vLayout->addWidget(new QLabel(QStringLiteral("и магнитной индукции")));
     vLayout->addWidget(angle, 0, Qt::AlignTop);
-    vLayout->addWidget(new QLabel(QStringLiteral("Магнитная индукцию")));
+    vLayout->addWidget(new QLabel(QStringLiteral("Магнитная индукция")));
     vLayout->addWidget(induction, 0, Qt::AlignTop);
     vLayout->addWidget(new QLabel(QStringLiteral("Скорость электрона")));
     vLayout->addWidget(speed, 0, Qt::AlignTop);
