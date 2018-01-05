@@ -64,7 +64,9 @@ void ScatterDataModifier::changePresetCamera()
 
 void ScatterDataModifier::changeAngle(const int &__angle)
 {
-    this->m_angle = __angle;
+    if (__angle == 180 || __angle == 360)
+        this->m_angle = 0;
+    else this->m_angle = __angle;
     m_angle = qDegreesToRadians((float)m_angle);
 }
 
