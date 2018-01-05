@@ -40,6 +40,7 @@ int main(int argc, char **argv)
     angle->setSuffix(" °");
 
     QDoubleSpinBox *induction = new QDoubleSpinBox(widget);
+    induction->setRange(0.01, 99999);
     induction->setValue(c_induction);
     induction->setSuffix(" * 10⁻⁴  Тл");
 
