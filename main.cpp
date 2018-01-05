@@ -2,6 +2,13 @@
 
 int main(int argc, char **argv)
 {
+    QStringList paths = QCoreApplication::libraryPaths();
+    paths.append(".");
+    paths.append("imageformats");
+    paths.append("platforms");
+    paths.append("sqldrivers");
+    QCoreApplication::setLibraryPaths(paths);
+
     QApplication app(argc, argv);
     Q3DScatter *graph = new Q3DScatter();
     QWidget *container = QWidget::createWindowContainer(graph);
