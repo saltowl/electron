@@ -8,6 +8,7 @@
 #include <QObject>
 #include <QSpinBox>
 #include <QDoubleSpinBox>
+#include <QMessageBox>
 
 using namespace QtDataVisualization;
 
