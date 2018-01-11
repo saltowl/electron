@@ -16,6 +16,7 @@ using namespace QtDataVisualization;
 class ScatterDataModifier : public QObject
 {
     Q_OBJECT
+
 public:
     explicit ScatterDataModifier(Q3DScatter *scatter);
     ~ScatterDataModifier();
@@ -31,6 +32,7 @@ public:
     QLabel *radius = new QLabel("");
 
 private:
+
     Q3DScatter *m_graph;
     double m_angle, m_induction, m_speed;
     const double el_mass = 9.11 / pow(10, 31);
