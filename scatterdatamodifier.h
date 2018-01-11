@@ -9,6 +9,7 @@
 #include <QSpinBox>
 #include <QDoubleSpinBox>
 #include <QMessageBox>
+#include <QLabel>
 
 using namespace QtDataVisualization;
 
@@ -25,6 +26,9 @@ public:
     void changeInduction(const double &__induction);
     void changeSpeed(const double &__speed);
     void addInfo() const;
+
+    QLabel *step = new QLabel("");
+    QLabel *radius = new QLabel("");
 
 private:
     Q3DScatter *m_graph;

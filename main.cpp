@@ -61,6 +61,12 @@ int main(int argc, char **argv)
     QPushButton *info = new QPushButton(widget);
     info->setText(QStringLiteral("Справка"));
 
+    ScatterDataModifier *modifier = new ScatterDataModifier(graph);
+    modifier->changeAngle(c_angle);
+    modifier->changeInduction(c_induction);
+    modifier->changeSpeed(c_speed);
+    modifier->addData();
+
     vLayout->addWidget(info, 0, Qt::AlignTop);
     vLayout->addWidget(cameraButton, 0, Qt::AlignTop);
     vLayout->addWidget(new QLabel(QStringLiteral("")));
@@ -73,12 +79,10 @@ int main(int argc, char **argv)
     vLayout->addWidget(speed, 0, Qt::AlignTop);
     vLayout->addWidget(new QLabel(QStringLiteral("")));
     vLayout->addWidget(go, 1, Qt::AlignTop);
-
-    ScatterDataModifier *modifier = new ScatterDataModifier(graph);
-    modifier->changeAngle(c_angle);
-    modifier->changeInduction(c_induction);
-    modifier->changeSpeed(c_speed);
-    modifier->addData();
+    vLayout->addWidget(new QLabel(QStringLiteral("Радиус траектории")));
+    vLayout->addWidget(modifier->radius);
+    vLayout->addWidget(new QLabel(QStringLiteral("Шаг")));
+    vLayout->addWidget(modifier->step);
 
     QObject::connect(info, &QPushButton::clicked,
                      modifier, &ScatterDataModifier::addInfo);

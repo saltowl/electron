@@ -50,6 +50,8 @@ void ScatterDataModifier::addData()
     }
 
     m_graph->seriesList().at(0)->dataProxy()->resetArray(dataArray);
+    radius->setNum(m_radius);
+    step->setNum(m_move);
 }
 
 void ScatterDataModifier::changePresetCamera()
