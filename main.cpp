@@ -79,9 +79,9 @@ int main(int argc, char **argv)
     vLayout->addWidget(speed, 0, Qt::AlignTop);
     vLayout->addWidget(new QLabel(QStringLiteral("")));
     vLayout->addWidget(go, 1, Qt::AlignTop);
-    vLayout->addWidget(new QLabel(QStringLiteral("Радиус траектории")));
+    vLayout->addWidget(new QLabel(QStringLiteral("Радиус траектории:")));
     vLayout->addWidget(modifier->radius);
-    vLayout->addWidget(new QLabel(QStringLiteral("Шаг")));
+    vLayout->addWidget(new QLabel(QStringLiteral("Шаг:")));
     vLayout->addWidget(modifier->step);
 
     QObject::connect(info, &QPushButton::clicked,

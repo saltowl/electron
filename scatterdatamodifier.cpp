@@ -14,7 +14,7 @@ ScatterDataModifier::ScatterDataModifier(Q3DScatter *scatter) : m_graph(scatter)
 
     QScatterDataProxy *proxy = new QScatterDataProxy;
     QScatter3DSeries *series = new QScatter3DSeries(proxy);
-    series->setItemLabelFormat(QStringLiteral("X: @xLabel*10⁻³ Y: @yLabel*10⁻³ Z: @zLabel*10⁻²"));
+    series->setItemLabelFormat(QStringLiteral("X: @xLabel*10⁻³ м, Y: @yLabel*10⁻³ м, Z: @zLabel*10⁻² м"));
     series->setMeshSmooth(true);
     series->setMesh(QAbstract3DSeries::MeshSphere);
     series->setItemSize(0.1f);
@@ -50,8 +50,8 @@ void ScatterDataModifier::addData()
     }
 
     m_graph->seriesList().at(0)->dataProxy()->resetArray(dataArray);
-    radius->setNum(m_radius);
-    step->setNum(m_move);
+    radius->setText(QString::number(m_radius) + " м");
+    step->setText(QString::number(m_move) + " м");
 }
 
 void ScatterDataModifier::changePresetCamera()
